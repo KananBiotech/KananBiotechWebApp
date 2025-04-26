@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kanan Biotech Pvt Ltd</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Lora', serif;
+      background:#ddd;
+      color: #333;
+      line-height: 1.6;
+
+
+    }
+
+    header {
+      height : 80px;
+      background-color: #28a745; 
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      color: white;
+    }
+
+    .logo h1 {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 1.8rem;
+      margin: 0;
+      font-weight: bold;
+      font-style: italic;
+      color: #fff;
+      
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 1.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #fff;
+      color: #28a745;
+    }
+
+    /* Active nav link styling */
+    nav ul li a.active {
+      background-color: #fff;
+      color: #28a745;
+    }
+
+    .search-section {
+      text-align: center;
+      margin: 2rem auto;
+    }
+
+    #searchInput {
+      padding: 1rem 1.5rem;
+      width: 80%;
+      max-width: 400px;
+      border: 2px solid #28a745;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      outline: none;
+      transition: border 0.3s ease;
+    }
+
+    #searchInput:focus {
+      border: 2px solid #333;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .view-button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .view-button:hover {
+      background-color: #28a745;
+    }
+
+    .view-button:focus {
+      outline: none;
+    }
+
+    .footer {
+      text-align: center;
+      background-color: #28a745;
+      color: white;
+      padding: 2rem;
+    }
+
+    .footer h3 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .footer a {
+      text-decoration: none;
+      color: #fff700;
+      font-weight: bold;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .hover-box {
+      background-color:rgb(40, 41, 40);
+      padding: 10px;
+      border-radius: 27px;
+      color: white;
+      transition: all 0.3s ease;
+      text-align: center;
+      width: 100px;
+      margin: 20px auto;
+  }
+  
+  /* This happens when you hover */
+  .hover-box:hover {
+      background-color:rgb(20, 20, 20);
+      transform: scale(1.05);
+      cursor: pointer;
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">
+        <h1>Kanan Biotech Pvt. Ltd.</h1>
+      </div>
+      <ul>
+        <li><a href="{{ url_for('home') }}" class="hover-box">HomePage</a></li>  <!--active -->
+        <li><a href="{{ url_for('contact') }}" class="hover-box">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="search-section" id="home">
+    <input type="text" id="searchInput" placeholder="Search product name..." />
+  </section>
+
+  <main>
+    <div class="card" id="medicine1" data-name="Medicine1">
+      <h2>Medicine1 Name</h2>
+      <p>Our premium product designed for superior quality and effectiveness.</p>
+      <button class="view-button" onclick="window.location.href='#'">View</button>
+    </div>
+    <div class="card" id="medicine2" data-name="Medicine2">
+      <h2>Medicine2 Name</h2>
+      <p>Enhance your operations with our top-tier solutions.</p>
+      <button class="view-button" onclick="window.location.href='#'">View</button>
+    </div>
+    <div class="card" id="medicine3" data-name="Medicine3">
+      <h2>Medicine3 Name</h2>
+      <p>Stay tuned for our upcoming releases.</p>
+      <button class="view-button" onclick="window.location.href='#'">View</button>
+    </div>
+  </main>
+
+  <footer class="footer" id="contact">
+    <h3>Powered by Kanan Biotech Pvt. Ltd.</h3>
+    <p>This website is designed to bring the best of fisheries technology to your fingertips.</p>
+    <p>Follow us on <a href="https://facebook.com" target="_blank">Facebook</a> & <a href="https://youtube.com" target="_blank">YouTube</a></p>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const productCards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    productCards.forEach(card => observer.observe(card));
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      productCards.forEach(card => {
+        const productName = card.dataset.name ? card.dataset.name.toLowerCase() : '';
+        card.style.display = productName.includes(query) ? 'block' : 'none';
+      });
+    });
+
+
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
