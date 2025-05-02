@@ -1,496 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kanan Biotech Pvt Ltd</title>
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #f1f1f1, #d8f3f3);
-    color: #333;
-    cursor: url('//static//MouseCursor.png'), auto;
-
-
-    /*font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #f1f1f1, #d8f3f3);
-    color: #333;
-    cursor: url('static\\MouseCursor.png'), auto;  */ /* 🐟 Your custom cursor image */
-}
-
-/* Top Bar Header */
-.top-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: #fff;
-    transition: top 0.4s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.top-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 30px;
-    background: #28a745;
-    color: #fff;
-}
-
-.logo h1 {
-    font-size: 20px;
-    font-style: italic;
-}
-
-.location p {
-    font-size: 16px;
-    font-style: italic;
-}
-
-nav ul.nav-menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding: 15px 0;
-    margin: 0;
-    background-color: #ddd;
-}
-
-.nav-menu li {
-    margin: 0 25px;
-}
-
-.nav-menu li a {
-    position: relative;
-    text-decoration: none;
-    color: #007bff;
-    font-weight: 600;
-    font-size: 18px;
-    padding-bottom: 6px;
-    transition: all 0.3s ease;
-}
-
-.nav-menu li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 0%;
-    background-color: #28a745;
-    transition: width 0.3s ease;
-}
-
-.nav-menu li a:hover {
-    color: #28a745;
-}
-
-.nav-menu li a:hover::after {
-    width: 100%;
-}
-
-/* About Section Styling */
-.about-section {
-    padding: 160px 30px 60px;
-    /*background-color: #ddd;*/
-    text-align: center;
-}
-
-.about-section h2 {
-    font-size: 34px;
-    color: #28a745;
-    margin-bottom: 20px;
-}
-
-.about-section p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 30px;
-    padding: 0 20px;
-}
-
-/* Special Offer Split Section */
-.split-section {
-    display: flex;
-    height: 400px;
-    width: 100%;
-    overflow: hidden;
-    margin-top: 40px;
-    background-color: #e1f7d5;
-    position: relative;
-    transition: all 1s ease;
-}
-
-.left-text {
-    flex: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #28a745;
-    color: #fff;
-    padding: 40px;
-    text-align: center;
-    position: relative;
-    opacity: 0;
-    transform: translateX(100%);
-    transition: opacity 1s ease, transform 1s ease;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateX(100%);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.left-text.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.offer-text h2 {
-    font-size: 30px;
-    margin-bottom: 1px;
-}
-
-.offer-text p {
-    font-size: 20px;
-}
-
-.right-slider {
-    flex: 1;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 1s ease;
-}
-
-.right-slider img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateX(100%);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.right-slider img.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-/* .................................................View button setting .....................................................*/
-.view-button {
-    display: inline-block;
-    margin-top: 1rem;
-    text-align: right; 
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 12px 27px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.view-button:hover {
-    background-color: #28a745;
-    
-}
-
-
-
-.view-button:focus {
-    outline: none;
-}
-/* .................................................View button setting .....................................................*/
-/* Footer Styling */
-.footer {
-    background-color: #28a745;
-    color: #fff;
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 60px;
-}
-
-.footer h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.social-media {
-    margin-top: 20px;
-}
-
-.social-media a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    margin: 0 15px;
-    transition: color 0.3s;
-}
-
-.social-media a:hover {
-    color: #007bff;
-}
-/*................ Card serrings-9.80............................. */
-main {
-    padding: 30px 20px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.card {
-    background-color: #afaeae;
-    border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(100px);
-    transition: transform 0.8s ease, opacity 0.8s ease;
-
-    font-size: 18px;
-    line-height: 1.8;
-    color: black;
-    margin-bottom: 30px;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-/*................ Card serrings-9.80............................. */
-
-/* .................................For mobile ........................................... */
-@media screen and (max-width: 768px) {
-    .split-section {
-    flex-direction: column;
-    height: auto;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanan BioTech Pvt Ltd</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
     }
-
-    .left-text, .right-slider {
-    height: auto;
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
     }
-
-    .footer {
-    padding: 30px 10px;
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
     }
-
-    .nav-menu {
-    flex-wrap: wrap;
-    }
-
-}
-.hover-box {
-    background-color: #4caf50;
-    padding: 20px;
-    border-radius: 10px;
-    color: white;
-    transition: all 0.3s ease;
-    text-align: center;
-    width: 200px;
-    margin: 20px auto;
-}
-
-/* This happens when you hover */
-.hover-box:hover {
-    background-color: #388e3c;
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-
-/* .................................For mobile ........................................... */
-</style>
+  </style>
 </head>
-<body>
+<body class="bg-black text-white font-sans">
 
-<!-- .........................................................Header portion............................................................ -->
-<header>
-    <div class="top-bar">
-        <div class="top-content">
-        <div class="logo"><h1>Kanan Biotech PVT. LTD.</h1></div>
-        <div class="location"><p>📍 Kolkata, India</p></div>
-        </div>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="#">About</a></li>
-                <li><a href="{{ url_for('view') }}">Products</a></li>
-                <li><a href="#">Growth</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<!-- .........................................................Header portion............................................................ -->
+  <!-- Navbar -->
+  <header class="sticky top-0 bg-black z-50">
+    <nav class="flex justify-between items-center p-4 border-b border-gray-700">
+      <h1 class="text-2xl font-bold text-green-400">Kanan BioTech</h1>
+      <ul class="flex space-x-4 text-sm md:text-base">
+        <li><a href="#about" class="hover:text-green-400">About</a></li>
+        <li><a href="{{ url_for('view') }}" class="hover:text-green-400">Products</a></li>
+        <li><a href="#growth" class="hover:text-green-400">Growth</a></li>
+        <li><a href="#team" class="hover:text-green-400">Team</a></li>
+        <li><a href="{{ url_for('contact') }}" class="hover:text-green-400">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<!-- ............................................................Image & Text visulization................................................... -->
-<div class="split-section">
-    <div class="left-text" id="text-1">
-        <div class="offer-text">
-        <h2>Welcome to KananBiotechPVTLTD</h2>
-        <p>💎 Enjoy a luxurious 15% OFF on our best-in-class fish seeds. Enhance your aquaculture game with quality and value. Offer valid this month only!</p>
-        </div>
+  <!-- Hero Section with Auto Background Change -->
+  <section id="hero" class="h-screen flex items-center justify-center text-center px-4 bg-cover bg-center relative transition-all duration-1000 ease-in-out">
+    <div class="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+    <div class="fade-in relative z-10">
+      <h2 class="text-4xl md:text-6xl font-extrabold mb-4 text-white">Welcome to Kanan BioTech</h2>
+      <p class="text-lg md:text-xl text-gray-300">Revolutionizing Fisheries & Medicine with Innovation</p>
     </div>
-    <div class="right-slider">
-        <img id="offer-slider" src="https://biomed.org.in/wp-content/uploads/2020/12/DSC09242.jpg" alt="OfferErrorImage-770" class="active">
-    </div>
-</div>
-<!-- ............................................................Image & Text visulization................................................... -->
+  </section>
 
-<!-- ........................................................About (Company related about section)................................................ -->
-<section class="about-section">
-    <h2>About Kanan Biotech Pvt Ltd</h2>
-    <p>At Kanan Biotech, we specialize in providing high-quality fish seeds and aquaculture products that cater to the growing needs of fish farmers and aquaculture professionals. With a focus on sustainability and innovation, our products ensure success and growth in aquaculture ventures. We aim to transform the industry with cutting-edge technology and premium quality seeds.</p>
-</section>
-<!-- ........................................................About (Company related about section)................................................ -->
+  <!-- About Section -->
+  <section id="about" class="px-6 py-16 fade-in">
+    <h2 class="text-3xl font-bold text-green-400 mb-6">About Us</h2>
+    <p class="text-gray-300 max-w-3xl">
+      Kanan BioTech Pvt Ltd focuses on sustainable aquaculture and modern medicinal research, providing high-quality fish seeds and eco-friendly biotech solutions.
+    </p>
+  </section>
 
-<!--  ..........................................................Card section.............................................................-->
-<main>
-    <div class="card">
-        <h2>About Kanan Biotech Pvt Ltd</h2>
-        <p>"Kanan BioTech Pvt Ltd is dedicated to revolutionizing the fisheries industry through innovative solutions and sustainable practices."
-
-            "At Kanan BioTech, we combine cutting-edge biotechnology with a passion for aquatic life, ensuring healthier fish populations and improved aquaculture methods."
-            
-            "We specialize in developing advanced medicines for aquatic species, promoting their growth and well-being while safeguarding the ecosystem."
-            
-            "Our research-driven approach in both fisheries and medicinal production empowers farmers and aquaculturists with the tools for success and sustainability."
-            
-            "Kanan BioTech Pvt Ltd is proud to lead the way in transforming the aquaculture sector with scientifically-backed solutions that foster fish health and productivity."</p>
-    </div>
-    <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 20px; background-color: #afaeae; border-radius: 10px; box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);">
-        <div>
-            <h2>Company's Products</h2>
-            <p>At Kanan Biotech, we offer a variety of high-quality products designed to support the growth and success of aquaculture businesses. Our range includes premium fish seeds, state-of-the-art aquaculture equipment, and effective water treatment solutions. Each product is crafted to meet the needs of fish farmers, ensuring sustainability, efficiency, and higher yields. Whether you're looking to improve water quality, boost fish growth, or enhance your farming operations, our products are designed to help you achieve the best results.</p>
-        </div>
-        <div style="align-self: flex-end;">
-            <button class="view-button hover-box" onclick="window.location.href='{{ url_for('view') }}'">See more products</button>
-        </div>
-    </div>
+  <!-- Products Section -->
+  <section id="products" class="px-6 py-16 fade-in">
+    <h2 class="text-3xl font-bold text-green-400 mb-6">Our Products</h2>
+    <ul class="list-disc list-inside text-gray-300 mb-6 space-y-2">
+      <li><span class="font-semibold text-white">Premium Fish Seeds</span> – High-quality young fish for superior aquaculture results.</li>
+      <li><span class="font-semibold text-white">Water Quality Testing Kits</span> – Ensure optimal pond conditions for fish health.</li>
+      <li><span class="font-semibold text-white">Herbal Medicines</span> – Natural health supplements for aquatic species.</li>
+    </ul>
+  
+    <p class="text-gray-400 mb-4">To explore our full range of products, visit our detailed product section:</p>
     
-    
-</main>
+    <div id="root" class="flex justify-center md:justify-start">
+      <button 
+        class="px-8 py-3 bg-gradient-to-r from-green-400 via-emerald-500 to-lime-400 text-black font-bold text-lg rounded-full shadow-lg hover:from-lime-400 hover:to-green-400 transition-all duration-300 transform hover:scale-105 ring-2 ring-green-500 hover:ring-lime-300"
+        onclick="window.location.href='{{ url_for('view') }}'">
+        🌿🐠 See More Products
+      </button>
+    </div>
+  </section>
+  
 
+  <!-- Growth Section -->
+  <section id="growth" class="px-6 py-16 fade-in">
+    <h2 class="text-3xl font-bold text-green-400 mb-6">Our Growth</h2>
+    <p class="text-gray-300 max-w-3xl">
+        Growths related....
+    </p>
+  </section>
 
-<!--  ..........................................................Card section.............................................................-->
+  <!-- Team Section -->
+  <section id="team" class="px-6 py-16 fade-in">
+    <h2 class="text-3xl font-bold text-green-400 mb-8">Meet Our Team</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
+        <div class="bg-gray-900 p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold">Product's Manager</h3>
+            <p class="text-gray-400">Aquaculture product's manager</p>
+          </div>
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg">
+        <h3 class="text-xl font-semibold">Arpan Patra & Pritam Pandit</h3>
+        <p class="text-gray-400">Software devoloper</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg">
+        <h3 class="text-xl font-semibold">Arindam Mondal</h3>
+        <p class="text-gray-400">Head of Aquaculture</p>
+      </div>
+      
+    </div>
+  </section>
 
+  <!-- Contact Section -->
+  <section id="contact" class="px-6 py-16 fade-in">
+    <h2 class="text-3xl font-bold text-green-400 mb-6">Contact Us</h2>
+    <p class="text-gray-300">Email: info@kananbiotech.com | Phone: +91-8001949805 | Facebook: | Youtube : </p>
+  </section>
 
+  <!-- Footer -->
+  <footer class="text-center p-4 border-t border-gray-700 text-sm text-gray-400">
+    &copy; 2025 Kanan BioTech Pvt Ltd. All rights reserved. More updates will be coming soon from our team.....
+  </footer>
 
+  <!-- JavaScript for Scroll Animation + Background Changer -->
+  <script>
+    // Scroll-based animation
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show'); // Re-enable animation on scroll
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
 
-<!-- ...............................................................Footer section.......................................................... -->
-<footer class="footer" id="Contact">
-    <h3>Thanks for visiting!</h3>
-    <p>Stay connected with us for updates and offers</p>
-<div class="social-media">
-    <a href="https://www.facebook.com/profile.php?id=100084315335135" target="_blank">Facebook</a>
-    <a href="https://www.youtube.com/watch?v=ZVKZsBe0Ncc" target="_blank">YouTube</a>
-</div>
-    <p>© 2025 Kanan Biotech Pvt. Ltd. All rights reserved.</p>
-</footer>
-<!-- ...............................................................Footer section.......................................................... -->
-
-<!-- ...................................................Image slider setting............................................................ -->
-<script>
-const offerImages = [
-    {
-    image: "https://biomed.org.in/wp-content/uploads/2020/12/DSC09242.jpg",
-    text: "𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓽𝓸 𝓚𝓪𝓷𝓪𝓷𝓑𝓲𝓸𝓽𝓮𝓬𝓱𝓟𝓥𝓣𝓛𝓣𝓓1" 
-    },
-    {
-    image: "static\\img2.jpg",
-    text: "𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓽𝓸 𝓚𝓪𝓷𝓪𝓷𝓑𝓲𝓸𝓽𝓮𝓬𝓱𝓟𝓥𝓣𝓛𝓣𝓓2"
-    },
-    {
-    image: "static\\img4.jpg",
-    text: "𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓽𝓸 𝓚𝓪𝓷𝓪𝓷𝓑𝓲𝓸𝓽𝓮𝓬𝓱𝓟𝓥𝓣𝓛𝓣𝓓3"
-    }
-];
-
-let offerIndex = 0;
-const offerSlider = document.getElementById('offer-slider');
-const textContainer = document.getElementById('text-1');
-
-function changeOffer() {
-    offerSlider.classList.remove('active');
-    textContainer.classList.remove('active');
-
-    setTimeout(() => {
-    offerSlider.src = offerImages[offerIndex].image;
-    textContainer.innerHTML = `
-        <div class="offer-text">
-        <h2>${offerImages[offerIndex].text.split("💎")[0]}</h2>
-        <p>💎 ${offerImages[offerIndex].text.split("💎")[1]}</p>
-        </div>
-    `;
-    void textContainer.offsetWidth;
-    void offerSlider.offsetWidth;
-
-    offerSlider.classList.add('active');
-    textContainer.classList.add('active');
-
-    offerIndex = (offerIndex + 1) % offerImages.length;
-    }, 1000);
-}
-
-setInterval(changeOffer, 4000);
-</script>
-<!-- ...................................................Image slider setting............................................................ -->
-
-<!-- .............................................................Navbar Scroll Setting.................................................... -->
-<script>
-let lastScrollTop = 0;
-const topBar = document.querySelector(".top-bar");
-
-window.addEventListener("scroll", function () {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop) {
-    topBar.style.top = "-120px"; // Hide when scrolling down
-    } else {
-    topBar.style.top = "0"; // Show when scrolling up
-    }
-
-    lastScrollTop = scrollTop;
-});
-</script>
-<!-- .............................................................Navbar Scroll Setting.................................................... -->
-
-<!--.....................................................................Cards setting.........................................................................-->
-<script>
-    const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-    if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-    } else {
-        entry.target.classList.remove('visible');
-    }
-    });
-}, {
-    threshold: 0.1
-});
-
-const cards = document.querySelectorAll('.card');
-cards.forEach(card => observer.observe(card));
-</script>
-<!--.....................................................................Cards setting.........................................................................-->
-
+    // Auto background changer for hero section
+    const heroSection = document.getElementById('hero');
+    const images = [
+        'static//img1.jpg',
+        'static//img2.jpg',
+        'static//img4.jpg',
+        'static//img5.jpg',
+        'static//img6.jpg',
+        'static//img7.jpg',
+        'static//img8.jpg'
+    ];
+    let currentIndex = 0;
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        heroSection.style.backgroundImage = `url('${images[currentIndex]}')`;
+    }, 3000);
+  </script>
 </body>
 </html>
